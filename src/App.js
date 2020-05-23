@@ -1,3 +1,4 @@
+//React Imports
 import React from 'react';
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
@@ -5,7 +6,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
+//My Created Files
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
 
 class App extends React.Component {
 
@@ -49,9 +52,13 @@ class App extends React.Component {
                 <Link className = "nav-link" to="/">Home</Link>
                 <Link className = "nav-link" to="/about">About</Link>
                 <Link className = "nav-link" to="/random">Random</Link>
+
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
+          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
+          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
 
           <Footer />
 
