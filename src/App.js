@@ -9,6 +9,8 @@ import Container from 'react-bootstrap/Container';
 //My Created Files
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import RandomPage from './pages/RandomPage';
 
 class App extends React.Component {
 
@@ -56,9 +58,11 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+
+          {/* React Routes uses Link Components instead of anchor tags */}
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
-          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
-          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
+          <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} subTitle = {this.state.about.subTitle} text={this.state.about.text} />} />
+          <Route path="/random" exact render={() => <RandomPage title={this.state.random.title} subTitle = {this.state.random.subTitle} text={this.state.random.text} />} />
 
           <Footer />
 
