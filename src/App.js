@@ -7,7 +7,6 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
 //My Created Files
-import Timeline from './components/Timeline';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -46,8 +45,9 @@ class App extends React.Component {
       <Router>
         
         <Container className = "p-0" fluid = { true }>
-          <Navbar className = "border-bottom" bg = "transparent" expand = "lg">
-            <Navbar.Brand >Cjache's Website! (Work in Progress)</Navbar.Brand>
+          <Navbar className = "border-bottom" bg = "dark" expand = "lg" variant="light">
+            <a className="navbar-brand" href="/"> Test </a>
+            <Navbar.Brand href="/">Cjache's Website! (Work in Progress)</Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-control="navbar-toggle"/>
             <Navbar.Collapse id = "navbar-toggle">
@@ -64,6 +64,7 @@ class App extends React.Component {
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} bodyText={this.state.home.bodyText} />} />
           <Route path="/about" render={() => <AboutPage title={this.state.about.title} subTitle = {this.state.about.subTitle} bodyText={this.state.about.bodyText} />} />
           <Route path="/random" render={() => <RandomPage title={this.state.random.title} subTitle = {this.state.random.subTitle} bodyText={this.state.random.bodyText} />} />
+
 
           <Footer />
 
