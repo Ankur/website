@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
 //My Created Files
+import Timeline from './components/Timeline';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -27,15 +28,15 @@ class App extends React.Component {
       home: {
         title: 'title',
         subTitle: 'subtitle',
-        bodyText: 'blah blah blah'
+        bodyText: 'blah blah blahhome'
       },
       about: {
-        title: 'About Me',
+        title: 'About Me'
       },
       random: {
         title: "Some Random Stuff I'm Working on",
-        subTitle: 'subtitle',
-        bodyText: 'blah blah blah'
+        subTitle: 'subtitlerandom',
+        bodyText: 'blah blah blahBody'
       }
     }
   }
@@ -60,9 +61,9 @@ class App extends React.Component {
           </Navbar>
 
           {/* React Routes uses Link Components instead of anchor tags */}
-          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} text={this.state.home.text} />} />
-          <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} subTitle = {this.state.about.subTitle} text={this.state.about.text} />} />
-          <Route path="/random" exact render={() => <RandomPage title={this.state.random.title} subTitle = {this.state.random.subTitle} text={this.state.random.text} />} />
+          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle = {this.state.home.subTitle} bodyText={this.state.home.bodyText} />} />
+          <Route path="/about" render={() => <AboutPage title={this.state.about.title} subTitle = {this.state.about.subTitle} bodyText={this.state.about.bodyText} />} />
+          <Route path="/random" render={() => <RandomPage title={this.state.random.title} subTitle = {this.state.random.subTitle} bodyText={this.state.random.bodyText} />} />
 
           <Footer />
 
